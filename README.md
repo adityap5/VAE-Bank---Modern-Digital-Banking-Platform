@@ -2,7 +2,7 @@
 
 A cutting-edge digital banking platform built with **Next.js 14**, featuring advanced animations, dark/light themes, and responsive design.
 
-[🚀 Live Demo](https://VAE-bank-demo.vercel.app) • [📖 Documentation](#project-overview) • [🎨 Design System](#design-system)
+[🚀 Live Demo](https://vaebank.netlify.app/) • [📖 Documentation](https://github.com/adityap5/VAE-Bank---Modern-Digital-Banking-Platform/blob/main/README.md) • [🎨 Design System](#design-system)
 
 ---
 
