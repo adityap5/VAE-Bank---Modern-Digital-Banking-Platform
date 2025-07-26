@@ -2,13 +2,13 @@
 
 A cutting-edge digital banking platform built with **Next.js 14**, featuring advanced animations, dark/light themes, and responsive design.
 
-[🚀 Live Demo](https://vxe-bank-demo.vercel.app) • [📖 Documentation](#project-overview) • [🎨 Design System](#design-system)
+[🚀 Live Demo](https://VAE-bank-demo.vercel.app) • [📖 Documentation](#project-overview) • [🎨 Design System](#design-system)
 
 ---
 
 ## 🧭 Project Overview
 
-**VXE Bank** is a modern digital banking platform tailored for the Indian market, combining sleek design with performance, accessibility, and security. It includes UPI integration concepts, multi-language readiness, and adheres to financial UX patterns and accessibility standards.
+**VAE Bank** is a modern digital banking platform tailored for the Indian market, combining sleek design with performance, accessibility, and security. It includes UPI integration concepts, multi-language readiness, and adheres to financial UX patterns and accessibility standards.
 
 ### ✨ Key Highlights
 
@@ -125,8 +125,8 @@ A cutting-edge digital banking platform built with **Next.js 14**, featuring adv
 ### 🔧 Installation
 
 ```bash
-git clone https://github.com/yourusername/vxe-bank.git
-cd vxe-bank
+git clone https://github.com/yourusername/VAE-bank.git
+cd VAE-bank
 npm install
 npm run dev
 ```
