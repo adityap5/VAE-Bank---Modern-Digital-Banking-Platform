@@ -256,7 +256,7 @@ export default function SupportPage() {
                   <CardContent className="p-0">
                     <button
                       onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                      className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/50 transition-colors"
+                      className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/50 hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] transition-all duration-300"
                     >
                       <h3 className="text-xl font-semibold text-foreground pr-4">{faq.question}</h3>
                       <motion.div animate={{ rotate: openFaq === index ? 180 : 0 }} transition={{ duration: 0.3 }}>

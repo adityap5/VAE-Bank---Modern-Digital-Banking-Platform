@@ -30,17 +30,17 @@ export default function LoadingScreen() {
       className="fixed inset-0 z-50 flex items-center justify-center bg-background"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="text-center">
         <motion.div
           className="mb-8"
           animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, -5, 0],
+            scale: [1, 1.05, 1],
+            rotate: [0, 2, -2, 0],
           }}
           transition={{
-            duration: 2,
+            duration: 1.5,
             repeat: Number.POSITIVE_INFINITY,
             ease: "easeInOut",
           }}
@@ -52,13 +52,13 @@ export default function LoadingScreen() {
           className="w-64 h-2 bg-muted rounded-full overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.3, duration: 0.3 }}
         >
           <motion.div
             className="h-full bg-gradient-to-r from-primary to-blue-600 rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
           />
         </motion.div>
 
@@ -66,7 +66,7 @@ export default function LoadingScreen() {
           className="mt-4 text-muted-foreground"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.6, duration: 0.3 }}
         >
           Loading VAE Bank...
         </motion.p>

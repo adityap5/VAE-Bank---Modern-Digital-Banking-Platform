@@ -32,27 +32,28 @@ const VAELogo = () => (
 )
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
 }
 
 const fadeInLeft = {
-  initial: { opacity: 0, x: -30 },
+  initial: { opacity: 0, x: -20 },
   animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
 }
 
 const fadeInRight = {
-  initial: { opacity: 0, x: 30 },
+  initial: { opacity: 0, x: 20 },
   animate: { opacity: 1, x: 0 },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
 }
 
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
     },
   },
 }
@@ -60,7 +61,7 @@ const staggerContainer = {
 const scaleOnHover = {
   whileHover: { scale: 1.02 },
   whileTap: { scale: 0.98 },
-  transition: { type: "spring", stiffness: 400, damping: 25 },
+  transition: { type: "spring" as const, stiffness: 300, damping: 20 },
 }
 
 const ImageWithFallback = ({ src, alt, ...props }: any) => (
@@ -118,7 +119,7 @@ export default function HomePage() {
                   className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 text-sm"
                   initial={{ scale: 0, rotate: -10 }}
                   animate={{ scale: 1, rotate: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
+                  transition={{ duration: 0.4, delay: 0.1, type: "spring" as const, stiffness: 200, damping: 15 }}
                 >
                   <Star className="w-4 h-4 text-primary" />
                   <span className="text-primary">Trusted by 40L+ Indians</span>
@@ -132,7 +133,7 @@ export default function HomePage() {
                       backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                     }}
                     transition={{
-                      duration: 4,
+                      duration: 3,
                       repeat: Number.POSITIVE_INFINITY,
                       ease: "linear",
                     }}
@@ -156,8 +157,8 @@ export default function HomePage() {
                   >
                     Open Account
                     <motion.div
-                      animate={{ x: [0, 3, 0] }}
-                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                      animate={{ x: [0, 2, 0] }}
+                      transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                     >
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </motion.div>
@@ -180,15 +181,15 @@ export default function HomePage() {
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.5 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                    transition={{ duration: 0.3, delay: 0.6 + index * 0.08, ease: "easeOut" }}
                     className="text-center"
                   >
                     <motion.div
                       className="text-2xl lg:text-3xl font-bold text-foreground"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.2 }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.15, ease: "easeOut" }}
                     >
                       {stat.value}
                     </motion.div>
@@ -199,17 +200,17 @@ export default function HomePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
+              initial={{ opacity: 0, scale: 0.95, rotateY: -10 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
               className="relative"
             >
               <motion.div
                 animate={{
-                  y: [0, -10, 0],
+                  y: [0, -8, 0],
                 }}
                 transition={{
-                  duration: 4,
+                  duration: 3,
                   repeat: Number.POSITIVE_INFINITY,
                   ease: "easeInOut",
                 }}
@@ -265,15 +266,15 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
-            animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{ duration: 0.6 }}
+            animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-center mb-16"
           >
             <motion.div
               className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3 mb-6"
               initial={{ scale: 0 }}
-              animate={featuresInView ? { scale: 1 } : { scale: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+                          animate={featuresInView ? { scale: 1 } : { scale: 0.95 }}
+            transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
             >
               <Award className="w-5 h-5 text-primary" />
               <span className="text-primary">Award-winning features</span>
@@ -350,36 +351,45 @@ export default function HomePage() {
               <motion.div
                 key={index}
                 variants={{
-                  initial: { opacity: 0, y: 40 },
+                  initial: { opacity: 0, y: 30 },
                   animate: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 0.6, delay: feature.delay },
+                    transition: { duration: 0.4, delay: feature.delay, ease: "easeOut" },
                   },
                 }}
                 whileHover={{
-                  y: -5,
-                  transition: { duration: 0.2 },
+                  y: -4,
+                  transition: { duration: 0.15, ease: "easeOut" },
                 }}
                 className="group"
               >
-                <Card className="h-full bg-card border-border hover:border-primary/20 transition-all duration-300 backdrop-blur-sm">
-                  <CardContent className="p-8">
-                    <motion.div
-                      className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                      whileHover={{ rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <feature.icon className="w-8 h-8 text-white" />
-                    </motion.div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <Card
+  className="h-full rounded-2xl 
+             bg-white/10 border border-white/20 
+             backdrop-blur-lg shadow-lg 
+             hover:border-primary/30 dark:hover:border-primary/40 
+             transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+>
+  <CardContent className="p-8">
+    <motion.div
+      className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl 
+                  flex items-center justify-center mb-6 
+                  group-hover:scale-110 transition-transform duration-300`}
+      whileHover={{ rotate: 3 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+    >
+      <feature.icon className="w-8 h-8 text-white" />
+    </motion.div>
+    <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
+      {feature.title}
+    </h3>
+    <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+      {feature.description}
+    </p>
+  </CardContent>
+</Card>
+
               </motion.div>
             ))}
           </motion.div>
@@ -391,17 +401,17 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={servicesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={servicesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               className="relative"
             >
               <motion.div
                 animate={{
-                  rotateY: [0, 5, 0],
-                  scale: [1, 1.01, 1],
+                  rotateY: [0, 3, 0],
+                  scale: [1, 1.005, 1],
                 }}
-                transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY }}
+                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               >
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
@@ -415,10 +425,10 @@ export default function HomePage() {
               <motion.div
                 className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-3xl blur-2xl"
                 animate={{
-                  opacity: [0.3, 0.6, 0.3],
-                  scale: [0.95, 1.05, 0.95],
+                  opacity: [0.3, 0.5, 0.3],
+                  scale: [0.98, 1.02, 0.98],
                 }}
-                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
               ></motion.div>
             </motion.div>
 
@@ -483,10 +493,10 @@ export default function HomePage() {
                       },
                     }}
                     whileHover={{ x: 5 }}
-                    className="flex items-start space-x-6 group cursor-pointer"
+                    className="flex items-start space-x-6 group cursor-pointer "
                   >
                     <motion.div
-                      className={`w-14 h-14 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-14 h-14 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 `}
                       whileHover={{ rotate: 10 }}
                     >
                       <service.icon className="w-7 h-7 text-white" />
@@ -535,7 +545,7 @@ export default function HomePage() {
                 name: "Priya Sharma",
                 role: "Digital Nomad",
                 image:
-                  "https://images.unsplash.com/photo-1494790108755-2616b9e0d9d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+                  "https://images.unsplash.com/photo-1439402702863-6434b61e6392?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content:
                   "VAE Bank has revolutionized how I manage my finances while traveling. Instant transfers and no foreign transaction fees are game-changers.",
               },
@@ -557,32 +567,34 @@ export default function HomePage() {
               },
             ].map((testimonial, index) => (
               <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -5, scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-                className="bg-card border border-border rounded-2xl p-8 backdrop-blur-sm"
-              >
-                <div className="flex items-center space-x-4 mb-6">
-                  <ImageWithFallback
-                    src={testimonial.image || "/placeholder.svg"}
-                    alt={testimonial.name}
-                    width={60}
-                    height={60}
-                    className="rounded-full"
-                  />
-                  <div>
-                    <h4 className="text-foreground font-semibold">{testimonial.name}</h4>
-                    <p className="text-muted-foreground text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-                <p className="text-foreground/90 leading-relaxed">{testimonial.content}</p>
-                <div className="flex space-x-1 mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-              </motion.div>
+  key={index}
+  variants={fadeInUp}
+  whileHover={{ y: -5, scale: 1.02 }}
+  transition={{ duration: 0.2 }}
+  className="rounded-2xl p-8 border border-white/20 backdrop-blur-lg shadow-lg 
+             hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] transition-all duration-300"
+>
+  <div className="flex items-center space-x-4 mb-6">
+    <ImageWithFallback
+      src={testimonial.image || "/placeholder.svg"}
+      alt={testimonial.name}
+      width={60}
+      height={60}
+      className="rounded-full"
+    />
+    <div>
+      <h4 className="text-foreground font-semibold">{testimonial.name}</h4>
+      <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+    </div>
+  </div>
+  <p className="text-foreground/90 leading-relaxed">{testimonial.content}</p>
+  <div className="flex space-x-1 mt-4">
+    {[...Array(5)].map((_, i) => (
+      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+    ))}
+  </div>
+</motion.div>
+
             ))}
           </motion.div>
         </div>
@@ -592,14 +604,14 @@ export default function HomePage() {
       <section className="py-24 bg-gradient-to-r from-primary/10 via-blue-500/10 to-primary/10 relative overflow-hidden">
         <motion.div
           className="absolute inset-0"
-          animate={{
-            background: [
-              "radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%)",
-            ],
-          }}
-          transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY }}
+                          animate={{
+                  background: [
+                    "radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%)",
+                    "radial-gradient(circle at 80% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)",
+                    "radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.1) 0%, transparent 50%)",
+                  ],
+                }}
+                transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
         ></motion.div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -638,7 +650,7 @@ export default function HomePage() {
               <motion.div variants={fadeInUp} {...scaleOnHover}>
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-4 shadow-2xl"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-4 shadow-2xl hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]"
                 >
                   Open Account Now
                   <ArrowRight className="ml-2 w-6 h-6" />
@@ -649,7 +661,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-border hover:bg-muted text-lg px-8 py-4 bg-transparent"
+                  className="border-border hover:bg-muted text-lg px-8 py-4 bg-transparent hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]"
                 >
                   Download App
                 </Button>
