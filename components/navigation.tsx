@@ -163,7 +163,7 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-2">
           <ThemeToggle />
-          <button className="text-foreground" onClick={() => setIsOpen(!isOpen)}>
+          <button className="text-foreground hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] transition-all duration-300" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>

@@ -10,11 +10,11 @@ export default function RouteProgress() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-500 to-primary z-50"
-          initial={{ scaleX: 0, transformOrigin: "left" }}
+          className="h-full bg-gradient-to-r from-primary to-blue-600 origin-left"
+          initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          exit={{ scaleX: 0, transformOrigin: "right" }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
+          exit={{ scaleX: 0 }}
+          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
         />
       )}
     </AnimatePresence>

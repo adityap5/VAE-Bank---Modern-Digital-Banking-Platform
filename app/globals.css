@@ -69,8 +69,93 @@
   }
 }
 
+/* Optimized transitions and animations */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  transition: color-scheme 0.3s ease, background-color 0.3s ease;
+}
+
+/* Optimized backdrop filter performance */
+.glass,
+.glass-card {
+  will-change: backdrop-filter, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Smooth button transitions */
+button,
+.btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+/* Optimized hover effects */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth card transitions */
+.card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+/* Optimized image transitions */
+img {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+/* Smooth link transitions */
+a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Optimized form element transitions */
+input,
+textarea,
+select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Smooth icon transitions */
+svg {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Optimized loading states */
+.loading {
+  transition: opacity 0.2s ease;
+}
+
+/* Smooth theme transitions */
+[data-theme] {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Optimized animation performance */
+.animate-smooth {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+/* Theme color schemes */
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 /* Custom scrollbar */
@@ -99,16 +184,35 @@ html {
   transition-duration: 300ms;
 }
 
-html {
-  transition: color-scheme 0.3s ease, background-color 0.3s ease;
+/* Glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-html[data-theme="light"] {
-  color-scheme: light;
+.dark .glass {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-html[data-theme="dark"] {
-  color-scheme: dark;
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Custom gradient animations */
@@ -389,7 +493,7 @@ html[data-theme="dark"] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
+  
   .animate-float,
   .animate-gradient-x,
   .animate-gradient-y,
@@ -397,4 +501,133 @@ html[data-theme="dark"] {
   .animate-pulse-glow {
     animation: none !important;
   }
+}
+
+/* Additional performance optimizations */
+.optimize-animations {
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  
+  /* Optimize for animations */
+  will-change: transform, opacity;
+  
+  /* Smooth animations */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optimized glassmorphism with better performance */
+.glass-optimized {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  /* Performance optimizations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: backdrop-filter, transform;
+}
+
+.dark .glass-optimized {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Smooth parallax effect */
+.parallax-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.parallax-element {
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Optimized loading animations */
+.loading-optimized {
+  animation: loading-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes loading-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Smooth text animations */
+.text-animate {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* Optimized hover states */
+.hover-optimized {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+.hover-optimized:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth focus states */
+.focus-optimized:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  transition: box-shadow 0.15s ease;
+}
+
+/* Optimized scroll animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Performance monitoring classes */
+.performance-monitor {
+  /* These classes help identify performance issues */
+  contain: layout style paint;
+}
+
+/* Optimized backdrop filters */
+.backdrop-optimized {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  /* Performance optimizations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: backdrop-filter;
+}
+
+/* Smooth color transitions */
+.color-transition {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Optimized transform animations */
+.transform-optimized {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }

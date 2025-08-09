@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { Twitter, Facebook, Instagram, Linkedin, Mail } from "lucide-react"
 
 const VAELogo = () => (
   <svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,26 +20,25 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 gap-12">
           <div className="md:col-span-2">
             <motion.div className="flex items-center space-x-2 mb-8" whileHover={{ scale: 1.05 }}>
-              <VAELogo />
-            </motion.div>
+          <VAELogo />
+        </motion.div>
             <p className="text-muted-foreground mb-8 leading-relaxed max-w-md">
               Banking for Digital India. Secure, fast, and designed for a borderless world. Experience the future of
               finance with VAE Bank India.
             </p>
             <div className="flex space-x-6">
-              {["twitter", "linkedin", "instagram", "youtube"].map((social) => (
+              {[<Twitter />, <Linkedin />, <Instagram />, <Facebook />].map((social,idx) => (
                 <motion.a
-                  key={social}
+                  key={idx}
                   href="#"
                   whileHover={{ scale: 1.2, rotate: 5 }}
                   className="w-10 h-10 bg-muted rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary transition-all duration-300"
                 >
-                  <span className="sr-only">{social}</span>
-                  <div className="w-5 h-5 bg-current"></div>
+                  {social}
                 </motion.a>
               ))}
             </div>
-          </div>
+        </div>
 
           {[
             {
