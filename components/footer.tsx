@@ -23,8 +23,7 @@ export default function Footer() {
           <VAELogo />
         </motion.div>
             <p className="text-muted-foreground mb-8 leading-relaxed max-w-md">
-              Banking for Digital India. Secure, fast, and designed for a borderless world. Experience the future of
-              finance with VAE Bank India.
+              From hedge fund strategies to trading bots and investment pools, VaeDeFi delivers the infrastructure and expertise to maximize your crypto potential.
             </p>
             <div className="flex space-x-6">
               {[<Twitter />, <Linkedin />, <Instagram />, <Facebook />].map((social,idx) => (
@@ -43,11 +42,11 @@ export default function Footer() {
           {[
             {
               title: "Products",
-              links: ["Personal Banking", "Business Banking", "Credit Cards", "Loans", "Investments", "Insurance"],
+              links: ["Trading Bots", "Trading Signals", "Trading Pools"],
             },
             {
               title: "Company",
-              links: ["About Us", "Careers", "Press", "Investors", "Partners"],
+              links: ["About Us"],
             },
             {
               title: "Support",
@@ -81,7 +80,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-muted-foreground mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} VAE Bank India. All rights reserved. | IFSC: VAE0000001
+            &copy; {new Date().getFullYear()} VAE DeFi, Cayman Islands. All rights reserved. | IFSC: VAE0000001
           </p>
           <div className="flex space-x-8 text-sm text-muted-foreground">
             <Link href="#" className="hover:text-foreground transition-colors">

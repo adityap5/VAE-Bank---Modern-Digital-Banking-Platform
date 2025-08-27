@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { useRef, Suspense } from "react"
+import Link from "next/link"
 
 const VAELogo = () => (
   <svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +100,7 @@ export default function HomePage() {
         <motion.div className="absolute inset-0 z-0" style={{ y: y1, opacity }}>
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt="Modern Banking India"
+            alt="Top-Tier Blockchain Trading Infrastructure"
             fill
             className="object-cover opacity-20 dark:opacity-10"
           />
@@ -122,11 +123,11 @@ export default function HomePage() {
                   transition={{ duration: 0.4, delay: 0.1, type: "spring" as const, stiffness: 200, damping: 15 }}
                 >
                   <Star className="w-4 h-4 text-primary" />
-                  <span className="text-primary">Trusted by 40L+ Indians</span>
+                  <span className="text-primary">Trusted by 13,000 Investors</span>
                 </motion.div>
 
                 <motion.h1 variants={fadeInUp} className="text-5xl lg:text-6xl font-bold leading-tight">
-                  Banking for
+                  Invest Smarter,
                   <motion.span
                     className="block bg-gradient-to-r from-primary via-blue-500 to-purple-600 bg-clip-text text-transparent"
                     animate={{
@@ -139,23 +140,25 @@ export default function HomePage() {
                     }}
                     style={{ backgroundSize: "200% 200%" }}
                   >
-                    New India
+                    Profit Bigger.
                   </motion.span>
                 </motion.h1>
               </motion.div>
 
               <motion.p variants={fadeInUp} className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Experience the future of banking with VAE Bank India. Seamlessly manage your money with cutting-edge
-                security, instant UPI payments, and innovative features designed for digital India.
+                VAE DeFi is your gateway to next-level crypto wealth. We design cutting-edge AI trading bots that execute with precision, launch high-potential memecoins engineered for explosive growth, and actively manage investor pools to maximize returns. With our elite trading signals, both free and VIP, you get insider-grade strategies that let you profit smarter, faster, and bigger than ever before. Join us, and turn the future of blockchain into your personal financial empire.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
                 <motion.div {...scaleOnHover}>
+                  
                   <Button
                     size="lg"
+                    onClick={() => window.location.href = "https://calendly.com/vaedefi/30min"}
                     className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-primary-foreground shadow-lg"
                   >
-                    Open Account
+             
+                    Get in Touch
                     <motion.div
                       animate={{ x: [0, 2, 0] }}
                       transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
@@ -166,18 +169,21 @@ export default function HomePage() {
                 </motion.div>
 
                 <motion.div {...scaleOnHover}>
-                  <Button size="lg" variant="outline" className="border-border hover:bg-muted bg-transparent">
-                    <Play className="mr-2 w-5 h-5" />
-                    Watch Demo
+                  <Button 
+                    size="lg" variant="outline" className="border-border hover:bg-muted bg-transparent"
+                    onClick={() => window.location.href = "https://calendly.com/metriccdefi/30min"}
+                    >
+                    
+                    Learn More
                   </Button>
                 </motion.div>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="flex items-center space-x-8 pt-8">
                 {[
-                  { value: "4M+", label: "Active Users" },
-                  { value: "₹50,000Cr+", label: "Assets Under Management" },
-                  { value: "180+", label: "Countries Supported" },
+                  { value: "2.6M+", label: "Active Users" },
+                  { value: "$1,902,000", label: "Assets Under Management" },
+                  { value: "180+", label: "Assets Supported" },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -218,7 +224,7 @@ export default function HomePage() {
               >
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="VAE Bank Mobile App India"
+                  alt="VAE Investments | DeFI Without Limits"
                   width={600}
                   height={700}
                   className="mx-auto rounded-3xl shadow-2xl"
@@ -277,18 +283,17 @@ export default function HomePage() {
             transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
             >
               <Award className="w-5 h-5 text-primary" />
-              <span className="text-primary">Award-winning features</span>
+              <span className="text-primary">Next-Level Features</span>
             </motion.div>
 
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Banking without
+              DeFi Without
               <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                boundaries
+                Limits
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Experience seamless digital banking with features designed for modern India. From instant UPI transfers to
-              advanced security, we've got you covered.
+              Supercharge your crypto journey with VaeDeFi. From AI-driven trading bots and powerful tools to investment pools and memecoin launches — we fuel the next generation of digital wealth.
             </p>
           </motion.div>
 
@@ -301,49 +306,49 @@ export default function HomePage() {
             {[
               {
                 icon: Shield,
-                title: "Bank-Grade Security",
+                title: "Top-Tier Trading Bots",
                 description:
-                  "Your funds are protected by advanced encryption and multi-factor authentication used by leading Indian banks.",
+                  "Trade smarter with AI-powered bots that execute strategies 24/7, ensuring you never miss profitable market opportunities.",
                 color: "from-green-400 to-emerald-600",
                 delay: 0,
               },
               {
                 icon: Zap,
-                title: "Instant UPI Payments",
+                title: "Advanced Trading Tools",
                 description:
-                  "Send money instantly using UPI, IMPS, or NEFT. No charges on UPI transactions up to ₹1 lakh per day.",
+                  "Access real-time analytics, precision entry/exit indicators, and charting tools designed for traders who want an edge.",
                 color: "from-orange-400 to-red-600",
                 delay: 0.1,
               },
               {
                 icon: Smartphone,
-                title: "Mobile-First Banking",
+                title: "Investment Pools",
                 description:
-                  "Manage your entire financial life from your phone with our award-winning mobile application in Hindi and English.",
+                  "Grow your portfolio by joining curated investment pools that diversify risk while maximizing long-term returns.",
                 color: "from-blue-400 to-cyan-600",
                 delay: 0.2,
               },
               {
                 icon: TrendingUp,
-                title: "Smart Investment Tools",
+                title: "Trading Signals",
                 description:
-                  "Grow your wealth with SIP investments, mutual funds, and fixed deposits with competitive interest rates.",
+                  "Stay ahead of the market with instant, data-backed signals for Bitcoin, altcoins, and trending memecoins.",
                 color: "from-purple-400 to-pink-600",
                 delay: 0.3,
               },
               {
                 icon: Globe,
-                title: "Multi-Language Support",
+                title: "Memecoin Development",
                 description:
-                  "Bank in your preferred language with support for Hindi, English, and 10+ regional languages.",
+                  "From concept to launch, VaeDeFi builds community-driven memecoins designed to capture hype and scale fast.",
                 color: "from-indigo-400 to-blue-600",
                 delay: 0.4,
               },
               {
                 icon: Eye,
-                title: "Real-Time Insights",
+                title: "DeFi Truly Without Limits",
                 description:
-                  "Get detailed analytics about your spending patterns with categorized expenses and budgeting tools.",
+                  "Experience borderless finance with seamless tools, automated strategies, and opportunities across the decentralized ecosystem.",
                 color: "from-yellow-400 to-orange-600",
                 delay: 0.5,
               },
@@ -440,14 +445,13 @@ export default function HomePage() {
             >
               <motion.div variants={fadeInRight}>
                 <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                  Everything you need for
+                  Unleash the Future of
                   <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                    financial freedom
+                    DeFi.
                   </span>
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  From personal banking to investments, VAE Bank India provides comprehensive financial services
-                  tailored for the Indian market.
+                  VaeDeFi gives you everything you need to dominate the decentralized markets — from automated bots and investment pools to viral memecoin launches. Trade smarter, earn faster, and build bigger with the next generation of digital finance.
                 </p>
               </motion.div>
 
@@ -455,30 +459,30 @@ export default function HomePage() {
                 {[
                   {
                     icon: CreditCard,
-                    title: "Premium Cards",
+                    title: "Alpha Access, Always",
                     description:
-                      "Credit and debit cards with exclusive benefits, cashback rewards, and India-wide acceptance.",
+                      "We track memecoin launches, market surges, and liquidity shifts in real time so you get signals before the crowd.",
                     color: "from-yellow-400 to-orange-600",
                   },
                   {
                     icon: DollarSign,
-                    title: "Investment Options",
+                    title: "Built by Traders, For Traders",
                     description:
-                      "SIP investments, mutual funds, fixed deposits, and gold investments with competitive returns.",
+                      "Every bot, tool, and pool we launch is battle-tested by real traders who know the grind, not just developers chasing hype.",
                     color: "from-green-400 to-emerald-600",
                   },
                   {
                     icon: Users,
-                    title: "Family Banking",
+                    title: "Full-Stack Token Development",
                     description:
-                      "Joint accounts, family savings goals, and financial planning tools for Indian families.",
+                      "We don’t just talk about memecoins — we build them, brand them, and launch them with the community power to go viral.",
                     color: "from-blue-400 to-indigo-600",
                   },
                   {
                     icon: Lock,
-                    title: "Digital Locker",
+                    title: "A Global DeFi Network",
                     description:
-                      "Secure storage for your Aadhaar, PAN, and other important documents with government-grade security.",
+                      "No borders, no banks, no limits. VaeDeFi connects you with opportunities worldwide, 24/7, without gatekeepers.",
                     color: "from-purple-400 to-pink-600",
                   },
                 ].map((service, index) => (
@@ -529,7 +533,7 @@ export default function HomePage() {
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Trusted by millions of
               <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                Indians
+                Investors
               </span>
             </h2>
           </motion.div>
@@ -543,19 +547,19 @@ export default function HomePage() {
             {[
               {
                 name: "Priya Sharma",
-                role: "Digital Nomad",
+                role: "Financial Advisor",
                 image:
                   "https://images.unsplash.com/photo-1439402702863-6434b61e6392?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 content:
-                  "VAE Bank has revolutionized how I manage my finances while traveling. Instant transfers and no foreign transaction fees are game-changers.",
+                  "ObitraBot caught trades I never would’ve spotted on my own. It feels like having a 24/7 trader grinding for me — and my portfolio has never looked stronger.",
               },
               {
-                name: "Rajesh Kumar",
+                name: "Matt Keenan",
                 role: "Entrepreneur",
                 image:
                   "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
                 content:
-                  "The business banking features are incredible. I can manage multiple currencies and make international payments seamlessly.",
+                  "This thing catches pumps before the herd piles in. ObitraBot made me more in a week trading memes than months of grinding charts.",
               },
               {
                 name: "Anita Patel",
@@ -563,7 +567,7 @@ export default function HomePage() {
                 image:
                   "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
                 content:
-                  "The wealth management tools and insights have helped me optimize my investment strategy. Truly next-generation banking.",
+                  "I invested $100,000 with VaeDeFi’s hedge fund, and within weeks, their strategies and trading expertise were already outperforming anything I could manage on my own. Smart, automated, and hands-off — this is the future of investing.",
               },
             ].map((testimonial, index) => (
               <motion.div
@@ -633,11 +637,10 @@ export default function HomePage() {
               }}
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
             >
-              Ready to join Digital India?
+              Want to invest with VaeDefi?
             </motion.h2>
             <p className="text-xl lg:text-2xl text-muted-foreground mb-12 leading-relaxed">
-              Experience banking without boundaries. Open your VAE Bank account today and discover what modern Indian
-              banking should be.
+              Invest with VaeDeFi and unlock a world of high-performance trading, automated bots, and investment pools designed to grow your wealth. Join today and see what modern DeFi can really do.
             </p>
 
             <motion.div
@@ -649,21 +652,23 @@ export default function HomePage() {
             >
               <motion.div variants={fadeInUp} {...scaleOnHover}>
                 <Button
+                  onClick={() => window.location.href = "https://calendly.com/vaedefi/30min"}
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-4 shadow-2xl hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]"
                 >
-                  Open Account Now
+                  Let's Get Started
                   <ArrowRight className="ml-2 w-6 h-6" />
                 </Button>
               </motion.div>
 
               <motion.div variants={fadeInUp} {...scaleOnHover}>
                 <Button
+                  onClick={() => window.location.href = "https://vaedefi.vercel.app/wealth"}
                   size="lg"
                   variant="outline"
                   className="border-border hover:bg-muted text-lg px-8 py-4 bg-transparent hover:shadow-[0_0_25px_rgba(255,255,255,0.15)]"
                 >
-                  Download App
+                  Learn More
                 </Button>
               </motion.div>
             </motion.div>
@@ -676,12 +681,12 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-foreground">5 min</div>
-                <div className="text-muted-foreground">Account Setup</div>
+                <div className="text-3xl font-bold text-foreground">2.6M</div>
+                <div className="text-muted-foreground">Active Users</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-foreground">₹0</div>
-                <div className="text-muted-foreground">Monthly Fees</div>
+                <div className="text-3xl font-bold text-foreground">$1,902,000</div>
+                <div className="text-muted-foreground">Assets Under Management</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-foreground">24/7</div>

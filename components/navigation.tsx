@@ -26,35 +26,15 @@ export default function Navigation() {
 
   const navItems = [
     {
-      name: "Personal",
-      href: "/personal",
-      dropdown: [
-        { name: "Savings Account", href: "/personal#savings" },
-        { name: "Current Account", href: "/personal#current" },
-        { name: "Fixed Deposits", href: "/personal#fd" },
-      ],
-    },
-    {
-      name: "Business",
-      href: "/business",
-      dropdown: [
-        { name: "Business Account", href: "/business#account" },
-        { name: "Business Loans", href: "/business#loans" },
-        { name: "Trade Finance", href: "/business#trade" },
-      ],
-    },
-    {
       name: "Products",
       href: "#",
       dropdown: [
-        { name: "Loans", href: "/loans" },
-        { name: "Credit Cards", href: "/cards" },
-        { name: "Investments", href: "/investments" },
-        { name: "Insurance", href: "/insurance" },
+        { name: "Trading Signals", href: "/signals" },
+        { name: "Investment Pools", href: "/pools" },
+        
       ],
     },
     { name: "Wealth", href: "/wealth" },
-    { name: "About", href: "/about" },
     { name: "Support", href: "/support" },
   ]
 
@@ -217,9 +197,9 @@ export default function Navigation() {
           ))}
           <div className="pt-4 space-y-3">
             <Button variant="ghost" className="w-full text-muted-foreground hover:text-foreground hover:bg-muted">
-              Login
+              Get in Touch
             </Button>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Open Account</Button>
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Start Trading</Button>
           </div>
         </div>
       </motion.div>

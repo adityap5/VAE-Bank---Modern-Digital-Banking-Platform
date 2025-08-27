@@ -10,7 +10,7 @@ import RouteProgress from "@/components/route-progress"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "VAE Bank - Banking for a Changing World",
+  title: "VAE DeFi - Top Tier Crypto Trading Infrastructure Firm",
   description:
     "Experience the future of banking with VAE Bank. Seamlessly manage your money across borders with cutting-edge security and innovative features designed for the digital age.",
   keywords:
