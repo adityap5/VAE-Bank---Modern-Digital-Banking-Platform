@@ -60,14 +60,13 @@ export default function LoansPage() {
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                   Smart
                   <span className="block bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-                    Loans
+                    Signals
                   </span>
                 </h1>
               </motion.div>
 
               <motion.p variants={fadeInUp} className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Turn your dreams into reality with our flexible loan options. From home loans to personal loans, get
-                competitive interest rates starting from 8.5% per annum with quick approval.
+                Catch the next big move before anyone else. Our expert-backed trading signals give you real-time entry and exit points across memecoins and major tokens — helping you maximize gains while minimizing risks.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
@@ -85,7 +84,7 @@ export default function LoansPage() {
 
               <motion.div variants={fadeInUp} className="flex items-center space-x-8 pt-8">
                 {[
-                  { value: "8.5%", label: "Starting Interest Rate" },
+                  { value: "8.5%", label: "Price" },
                   { value: "24hrs", label: "Quick Approval" },
                   { value: "₹50L", label: "Max Loan Amount" },
                 ].map((stat, index) => (
@@ -135,10 +134,10 @@ export default function LoansPage() {
             {[
               {
                 icon: Home,
-                title: "Home Loans",
-                description: "Fulfill your dream of owning a home with attractive interest rates and flexible tenure.",
-                rate: "8.5% - 9.5% p.a.",
-                maxAmount: "₹5 Crores",
+                title: "Starter Signals",
+                description: "Get your foot in the market with curated entry and exit points on trending tokens. Perfect for beginners looking to build consistency.",
+                price: "Free (Limited Signals Per Week",
+                maxAmount: "$0",
                 color: "from-blue-400 to-cyan-600",
               },
               {
@@ -157,30 +156,7 @@ export default function LoansPage() {
                 maxAmount: "₹50 Lakhs",
                 color: "from-purple-400 to-pink-600",
               },
-              {
-                icon: GraduationCap,
-                title: "Education Loans",
-                description: "Invest in your future with education loans for higher studies in India and abroad.",
-                rate: "9.5% - 12.0% p.a.",
-                maxAmount: "₹1.5 Crores",
-                color: "from-yellow-400 to-orange-600",
-              },
-              {
-                icon: Building2,
-                title: "Business Loans",
-                description: "Grow your business with working capital and term loans at competitive rates.",
-                rate: "11.0% - 16.0% p.a.",
-                maxAmount: "₹10 Crores",
-                color: "from-red-400 to-rose-600",
-              },
-              {
-                icon: Calculator,
-                title: "Loan Against Property",
-                description: "Unlock the value of your property with loans against residential or commercial property.",
-                rate: "9.0% - 12.0% p.a.",
-                maxAmount: "₹5 Crores",
-                color: "from-indigo-400 to-blue-600",
-              },
+              
             ].map((loan, index) => (
               <motion.div
                 key={index}
@@ -202,15 +178,15 @@ export default function LoansPage() {
                     <p className="text-muted-foreground leading-relaxed mb-6">{loan.description}</p>
                     <div className="space-y-2 mb-6">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Interest Rate:</span>
+                        <span className="text-muted-foreground">Price:</span>
                         <span className="text-green-600 dark:text-green-400 font-semibold">{loan.rate}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Max Amount:</span>
+                        <span className="text-muted-foreground">Accuracy:</span>
                         <span className="text-primary font-semibold">{loan.maxAmount}</span>
                       </div>
                     </div>
-                    <Button className="w-full bg-muted hover:bg-muted/80 text-foreground">Apply Now</Button>
+                    <Button className="w-full bg-muted hover:bg-muted/80 text-foreground">Purchase Now</Button>
                   </CardContent>
                 </Card>
               </motion.div>
