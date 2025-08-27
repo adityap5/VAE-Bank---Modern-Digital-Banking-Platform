@@ -25,7 +25,17 @@ export default function Navigation() {
   const [isNavigating, setIsNavigating] = useState(false)
 
   const navItems = [
-    ,
+    {
+      name: "Products",
+      href: "#",
+      dropdown: [
+        { name: "Trading Signals", href: "/signals" },
+        { name: "Investment Pools", href: "/pools" },
+        
+      ],
+    },
+    { name: "Wealth", href: "/wealth" },
+    { name: "Support", href: "/support" },
   ]
 
   const handleNavigation = (href: string) => {

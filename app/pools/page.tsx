@@ -60,14 +60,13 @@ export default function InvestmentsPage() {
                 <h1 className="text-6xl lg:text-7xl font-bold leading-tight">
                   Smart
                   <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                    Investments
+                    Bots
                   </span>
                 </h1>
               </motion.div>
 
               <motion.p variants={fadeInUp} className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                Build wealth for your future with our range of investment products. Start your SIP with as low as ₹500
-                per month and enjoy tax benefits under Section 80C.
+                Grow your portfolio effortlessly with SmartBot, our AI-powered trading bot. Start trading with as little as $50 and watch your investments work 24/7, capturing opportunities across memecoins and top tokens.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
